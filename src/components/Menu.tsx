@@ -7,7 +7,7 @@ const Menu = ({ className }: { className: string }) => {
     const { t } = useTranslation();
   
     return (
-      <ul className={className}>
+      <ul className={`${className} flex flex-col gap-4`}>
         <li><Link to={routes.home} className="hover:text-gray-400">{t('nav.home')}</Link></li>
         <li><Link to={routes.about} className="hover:text-gray-400">{t('nav.about')}</Link></li>
         <li><Link to={routes.projects} className="hover:text-gray-400">{t('nav.projects')}</Link></li>

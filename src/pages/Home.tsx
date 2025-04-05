@@ -13,7 +13,7 @@ const Home = () => {
     <>
         <div className="min-h-[50vh] md:max-w-[66%] md:mx-auto  bg-white dark:bg-gray-900 bg-opacity-20 backdrop-blur-lg p-4 rounded-xl shadow-lg">
         <div className="flex flex-col items-center md:items-start mx-auto p-2">
-            <h1 className="text-left text-5xl font-bold">
+            <h1 className="text-left text-4xl md:text-5xl font-bold">
                 {t('hero.title')} <br />
                 <span className="md:text-6xl text-blue-900 dark:text-blue-400">Franco Ortiz</span> <br />
                 {t('hero.developer')}
