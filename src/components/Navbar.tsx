@@ -3,6 +3,7 @@ import Menu from './Menu'
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import ThemeManager from './ThemeManager';
 
 
 const Navbar = () => {
@@ -14,16 +15,6 @@ const Navbar = () => {
         i18n.changeLanguage(lang);
     };
 
-    //Theme toggle
-    const [isDark, setIsDark] = useState(false);
-
-    useEffect(() => {
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }, [isDark]);
 
   return (
     <nav className="bg-transparent p-4">
@@ -40,10 +31,7 @@ const Navbar = () => {
                         {i18n.language === 'es' ? 'Es' : 'En'}
                 </button>
                 
-                <button className="px-4 py-2 bg-transparent rounded-lg hover:text-gray-400 cursor-pointer" 
-                        onClick={() => setIsDark(!isDark)}>
-                    <FontAwesomeIcon icon={ !isDark? faMoon: faSun}/>
-                </button>
+                <ThemeManager/>
             </div>
         </div>
     </nav>
