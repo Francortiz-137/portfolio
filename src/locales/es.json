@@ -1,0 +1,58 @@
+{
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre Mí",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "contact": "Contacto",
+      "saveFiles": "Datos Guardados"
+    },
+    "hero": {
+      "title": "Hola, soy",
+      "subtitle": "Franco Ortiz",
+      "description": "Apasionado por crear soluciones tecnológicas innovadoras y eficientes. Con experiencia en desarrollo web y backend, me especializo en construir aplicaciones modernas que ofrecen una excelente experiencia de usuario.",
+      "cta": "Ver Proyectos",
+      "contact": "Contáctame",
+      "developer": "Desarrollador Fullstack"
+    },
+    "about": {
+      "title": "Sobre Mí",
+      "description": "Soy Franco Ortiz Cabrera, desarrollador fullstack con experiencia en tecnologías como Angular, Spring Boot y Node.js. Graduado de la Pontificia Universidad Católica de Valparaíso, me especializo en crear aplicaciones eficientes y escalables, utilizando tanto bases de datos relacionales (MySQL) como no relacionales (MongoDB).\n\nEn mi día a día, utilizo metodologías ágiles para asegurar una colaboración efectiva y la entrega de resultados de alto impacto.\n\nMe apasiona seguir aprendiendo y contribuir a soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos. Busco oportunidades que me permitan continuar creciendo profesionalmente en el desarrollo de aplicaciones web y backend."
+    },
+    "projects": {
+      "title": "Proyectos",
+      "subtitle": "Algunos de mis trabajos más recientes",
+      "description": "Explora una selección de proyectos que demuestran mi experiencia en desarrollo web y backend. Cada proyecto representa un desafío único y una oportunidad para aplicar soluciones innovadoras.",
+      "view": "Ver Proyecto",
+      "technologies": "Tecnologías utilizadas",
+      "filteredBy": "Filtrado por",
+      "clearFilter": "Limpiar filtro",
+      "viewAllSkills": "Ver todas las habilidades",
+      "noProjectsFound": "No se encontraron proyectos con esta tecnología",
+      "showAllProjects": "Mostrar todos los proyectos"
+    },
+      "skills":  {
+          "title": "Habilidades",
+          "description": "Mis habilidades y tecnologías favoritas",
+          "languages": "Lenguajes",
+          "frameworks": "Frameworks",
+          "databases": "Bases de datos",
+          "tools": "Herramientas",
+          "other": "Otros",
+          "frontend": "Frontend",
+          "backend": "Backend",
+          "project": "proyecto",
+          "projects": "proyectos"
+      },
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "Trabajemos juntos",
+      "description": "¿Tienes un proyecto en mente o buscas un desarrollador para tu equipo? Estoy disponible para colaborar en nuevos desafíos y oportunidades. No dudes en contactarme para discutir cómo podemos trabajar juntos.",
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    }
+  } 

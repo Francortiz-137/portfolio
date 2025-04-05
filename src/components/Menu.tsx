@@ -1,12 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { routes } from '../utils/routes'
 
 const Menu = () => {
   return (
     <ul className="flex space-x-6">
-        <li><a href="#" className="hover:text-gray-400">Inicio</a></li>
-        <li><a href="#services" className="hover:text-gray-400">Servicios</a></li>
-        <li><a href="#about" className="hover:text-gray-400">Nosotros</a></li>
-        <li><a href="#contact" className="hover:text-gray-400">Contacto</a></li>
+        <li><Link to={routes.home} className="hover:text-gray-400">Inicio</Link></li>
+        <li><Link to={routes.about} className="hover:text-gray-400">About</Link></li>
+        <li><Link to={routes.projects} className="hover:text-gray-400">Projects</Link></li>
+        <li><Link to={routes.skills} className="hover:text-gray-400">Contacto</Link></li>
+        <li><Link to={routes.contact} className="hover:text-gray-400">Contacto</Link></li>
     </ul>
   )
 }
