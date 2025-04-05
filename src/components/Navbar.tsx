@@ -25,7 +25,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="bg-transparent p-4">
+    <nav className="bg-transparent p-4 mx-4">
         <div className="container mx-auto flex justify-between items-center max-w-full">
             <button   onClick={toggleMenu}
                     className='cursor-pointer'>

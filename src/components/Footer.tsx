@@ -9,13 +9,13 @@ const Footer = () => {
         <div className="container mx-auto text-center">
             
             <div className="mt-4 flex justify-center space-x-6">
-            <a href="#" className="text-2xl hover:text-gray-400">
+            <a href="https://github.com/Francortiz-137" className="text-2xl hover:text-gray-400">
             <FontAwesomeIcon icon={faGithub} /> 
             </a>
-            <a href="#" className="text-2xl hover:text-gray-400">
+            <a href="https://www.linkedin.com/in/franco-ortiz-cabrera/" className="text-2xl hover:text-gray-400">
             <FontAwesomeIcon icon={faLinkedin} /> 
             </a>
-            <a href="#" className="text-2xl hover:text-gray-400">
+            <a href="francortiz.c@gmail.com" className="text-2xl hover:text-gray-400">
             <FontAwesomeIcon icon={faEnvelope} />
             </a>
             </div>
