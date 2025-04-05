@@ -2,7 +2,7 @@ import React from 'react'
 import { Project } from '../utils/projects';
 
 const ProjectCard = ({ project }: { project: Project }) => {
-    const { title, description, image, technologies, githubUrl, liveUrl, category } = project;
+    const { id, title, description, image, technologies, githubUrl, liveUrl, category } = project;
   
     return (
       <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800">
@@ -17,8 +17,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </p>
         </div>
         <div className='flex gap-2'>
-            { technologies.map( (tech) => {
-                return <button key={tech} className='bg-blue-500'>
+            { technologies.map( (tech, index) => {
+                return <button key={index} className='bg-blue-500'>
                     {tech}
                 </button>;
                 })

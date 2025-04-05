@@ -15,14 +15,23 @@ const Navbar = () => {
         i18n.changeLanguage(lang);
     };
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+      setIsOpen(!isOpen);
+      console.log(isOpen);
+    };
+  
+
 
   return (
     <nav className="bg-transparent p-4">
         <div className="container mx-auto flex justify-between items-center max-w-full">
-            <button>
+            <button   onClick={toggleMenu}
+                    className='cursor-pointer'>
                 <FontAwesomeIcon icon={faBars}/>
             </button>
-            <Menu/>
+            <Menu className={`${isOpen ? 'block' : 'hidden'} bg-gray-700 p-4`}/>
             <div>
                 <button
                         onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}

@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <>
-        <div className="min-h-[50vh] max-w-[66%] mx-auto flex flex-col bg-white dark:bg-gray-900 bg-opacity-20 backdrop-blur-lg p-8 rounded-xl shadow-lg">
+        <div className="min-h-[50vh] md:max-w-[66%] mx-auto flex flex-col bg-white dark:bg-gray-900 bg-opacity-20 backdrop-blur-lg p-8 rounded-xl shadow-lg">
             <div className=' mx-auto'>
                 <h1 className="text-left text-5xl font-bold p-2">
                                 {t('hero.title')} <br />
