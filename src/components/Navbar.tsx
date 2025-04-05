@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-transparent p-4">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto flex justify-between items-center max-w-full">
             <button>
                 <FontAwesomeIcon icon={faBars}/>
             </button>
