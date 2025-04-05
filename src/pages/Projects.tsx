@@ -16,10 +16,18 @@ const Projects = () => {
 
   return (
     <>
-        <h1></h1>
-        <p></p>
+        <h1 className='text-center text-5xl'>
+          { t('projects.title')}
+        </h1>
+        <div className=' md:max-w-[66%] md:mx-auto  
+            bg-opacity-20 backdrop-blur-lg p-4 rounded-xl shadow-lg p-6'>
+          <p>
+          { t('projects.description')}
+          </p>
+        </div>
+          
 
-        <div>
+        <div className='container flex flex-col md:flex-row md:flex-wrap items-center md:justify-center gap-3 mx-auto p-8'>
             {
                 projects.map((project) =>{
                    return <ProjectCard key={project.id} project = {project}/>

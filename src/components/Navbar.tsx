@@ -35,11 +35,11 @@ const Navbar = () => {
             </button>
             
             {isOpen && (
-              <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+              <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center md:justify-end justify-center z-50">
                 <div className="w-full md:w-2/3 bg-blue-300 dark:bg-purple-900 rounded-lg shadow-lg p-6 relative">
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="absolute top-8 right-2 text-gray-500 hover:text-red-500 p-2"
+                    className="absolute top-8 right-2 text-gray-500 hover:text-red-500 p-2 cursor-pointer"
                   >
                     <X/>
                   </button>
@@ -47,12 +47,12 @@ const Navbar = () => {
                     <div
                       className='h-screen w-full flex flex-col justify-between items-left p-4
                         text-6xl'>
-                        <div className='p-2 mt-12'>
+                        <div className='p-2 mt-12 text-7xl font-bold'>
                           <span className="md:hidden">FO</span>
-                          <span className="hidden md:block">FrancoOrtiz</span>
+                          <span className="hidden md:block">FrancOrtiz</span>
                         </div>
-                        <Menu className={`${isOpen ? 'block' : 'hidden'} p-2`}/>
-                        <div className='py-6 ml-10 mb-12'>
+                        <Menu className={`${isOpen ? 'block' : 'hidden'} px-2 py-6`}/>
+                        <div className='py-6 mb-12'>
                           <ThemeManager/>
                           <button
                                 onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')}

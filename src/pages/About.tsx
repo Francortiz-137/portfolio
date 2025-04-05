@@ -16,7 +16,7 @@ const About = () => {
             {t('about.title')}
         </motion.h1>
         <div className="w-full rounded-t-2xl">
-            <div className="mx-auto my-6 w-20 h-20 rounded-full overflow-hidden border-2 border-gray-300">
+            <div className="mx-auto my-6 w-40 h-40 rounded-full overflow-hidden border-2 border-gray-300">
                 <img
                     src={image || defaultImage}
                     alt="Perfil"
