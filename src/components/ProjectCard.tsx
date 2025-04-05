@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
         <div className='flex gap-2'>
             { technologies.map( (tech) => {
-                return <button className='bg-blue-500'>
+                return <button key={tech} className='bg-blue-500'>
                     {tech}
                 </button>;
                 })
