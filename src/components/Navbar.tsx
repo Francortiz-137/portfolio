@@ -35,8 +35,9 @@ const Navbar = () => {
             </button>
             
             {isOpen && (
-              <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center md:justify-end justify-center z-50">
-                <div className="w-full md:w-2/3 bg-blue-300 dark:bg-purple-900 rounded-lg shadow-lg p-6 relative">
+              <div className=" before:top-0 before:left-0 before:w-1/6 before:h-full before:bg-blue-500 fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center md:justify-end justify-center z-50 "
+              >
+                <div className="w-full md:w-1/2 bg-blue-300 dark:bg-purple-900 rounded-lg shadow-lg p-6 relative">
                   <button
                     onClick={() => setIsOpen(false)}
                     className="absolute top-8 right-2 text-gray-500 hover:text-red-500 p-2 cursor-pointer"
