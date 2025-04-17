@@ -2,6 +2,7 @@
 
 @theme {
     --color-primary: #4a90e2;
+    --color-secondary: #d9d9d9;
   }
 
 @layer components {
@@ -17,6 +18,14 @@
     }
 
     .title{
-        @apply text-center font-bold text-4xl text-primary my-4;
+        @apply text-center font-bold text-4xl md:text-6xl lg:text-8xl text-primary dark:text-secondary my-4;
     }
+
+    .container{
+        @apply max-w-6xl mx-auto px-4 py-2;
+    }
+  }
+
+  @custom-variant dark (&:where(.dark, .dark *)){
+    
   }

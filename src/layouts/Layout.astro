@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -13,9 +13,9 @@ import Header from '../components/Header.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Franco Ortiz - Portfolio</title>
 	</head>
-	<body>
+	<body class="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
 		<Header/>
-		<main class="min-w-screen">
+		<main class="container min-h-screen">
 			<slot />
 		</main>
 		<Footer/>

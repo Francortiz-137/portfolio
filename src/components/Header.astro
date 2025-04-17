@@ -6,7 +6,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <header>
     <nav class="bg-gray-800 text-white p-4">
-        <div class="flex justify-between items-center max-w-6xl mx-auto">
+        <div class="container flex justify-between items-center mx-auto">
           <div class="text-xl font-bold">
             <a href="/">Franco Ortiz</a>
           </div>
@@ -24,18 +24,22 @@ import ThemeToggle from './ThemeToggle.astro';
               <a href="/projects" class="block link">Projects</a>
               <a href="/skills" class="block link">Skills</a>
               <a href="/contact" class="block link">Contact</a>
-              <li><ThemeToggle/></li>
+              <ThemeToggle/>
             </div>
+            
           </div>
-      
-          <ul class="hidden md:flex space-x-8">
+          <div class="hidden md:flex md:items-center md:space-x-8">
+            <ul class="md:flex space-x-8">
             <li><a href="/" class="link">Home</a></li>
             <li><a href="/about" class="link">About</a></li>
             <li><a href="/projects" class="link">Projects</a></li>
             <li><a href="/skills" class="link">Skills</a></li>
             <li><a href="/contact" class="link">Contact</a></li>
-            <li><ThemeToggle/></li>
           </ul>
+            <ThemeToggle/>
+          </div>
+          
+          
         </div>
       </nav>
 
