@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle.astro';
 
 ---
 
-<header class="sticky top-0 z-50 w-screen backdrop-blur-lg transition-all duration-300 ease-in-out">
+<header class="sticky top-0 z-50 w-screen bg-zinc-50 dark:bg-zinc-950 md:bg-transparent dark:md:bg-transparent md:backdrop-blur-lg transition-all duration-300 ease-in-out">
     <nav class="bg-transparent  p-4">
         <div class="container flex justify-between items-center mx-auto">
           <div class="text-xl font-bold">
@@ -18,23 +18,23 @@ import ThemeToggle from './ThemeToggle.astro';
               <Menu/>
             </label>
       
-            <div class="hidden peer-checked:block absolute right-0 mt-4 w-full bg-zinc-50/70 dark:bg-zinc-950/70 rounded-lg shadow-lg p-4 space-y-3">
-              <a href="/" class="block link">Home</a>
-              <a href="/about" class="block link">About</a>
-              <a href="/projects" class="block link">Projects</a>
-              <a href="/skills" class="block link">Skills</a>
-              <a href="/contact" class="block link">Contact</a>
+            <div class="hidden peer-checked:block absolute right-0 mt-4 w-full bg-zinc-50 dark:bg-zinc-950 rounded-lg shadow-lg p-4 space-y-3">
+              <a href="#" class="block link">Home</a>
+              <a href="#about" class="block link">About</a>
+              <a href="#projects" class="block link">Projects</a>
+              <a href="#skills" class="block link">Skills</a>
+              <a href="#contact" class="block link">Contact</a>
               <ThemeToggle/>
             </div>
             
           </div>
           <div class="hidden md:flex md:items-center md:space-x-8">
             <ul class="md:flex space-x-8">
-            <li><a href="/" class="link">Home</a></li>
-            <li><a href="/about" class="link">About</a></li>
-            <li><a href="/projects" class="link">Projects</a></li>
-            <li><a href="/skills" class="link">Skills</a></li>
-            <li><a href="/contact" class="link">Contact</a></li>
+            <li><a href="#" class="link">Home</a></li>
+            <li><a href="#about" class="link">About</a></li>
+            <li><a href="#projects" class="link">Projects</a></li>
+            <li><a href="#skills" class="link">Skills</a></li>
+            <li><a href="#contact" class="link">Contact</a></li>
           </ul>
             <ThemeToggle/>
           </div>

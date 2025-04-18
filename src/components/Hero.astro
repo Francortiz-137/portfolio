@@ -1,21 +1,42 @@
 ---
-
+import { Download, Linkedin } from "@lucide/astro";
+import { Github } from "@lucide/astro";
+import { Mail } from "@lucide/astro";
 ---
-<section class="flex flex-col items-start justify-center ">
-        <div class="backdrop-blur-lg shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-center">
-            <h1 class="title max-w-100%">
-                Hola! Soy 
-                Franco Ortiz Fullstack developer
-            </h1>
-            <p class="text-left my-4 text-lg max-w-2xl text-xl">
-                Desarrollador web con experiencia en la creación de aplicaciones
-                dinámicas y escalables. Me apasiona aprender nuevas tecnologías y
-                aplicarlas en mis proyectos.
-            </p>
-            <div>
-                <a class="btn-primary" href="/contact">Contactame!</a>
-                <a class="btn-secondary" href="/projects">Ver Proyectos</a>
-            </div>
-        </div>
+<section  id={Astro.props.id} >
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
+        <h1 class="col-span-12 md:col-span-6 title text-start">
+            Hola! Soy 
+            <br>
+            <span>Franco Ortiz</span>
+        </h1>
+        <img src="/favicon.svg" alt="Logo Franco Ortiz" 
+            class="col-span-12 md:col-span-6 w-32 h-32 rounded-full mx-auto mb-4" />
     
-</section>
+        <p class="col-span-12 text-left my-4 text-lg max-w-2xl text-xl text-pretty">
+            Desarrollador web con experiencia en la creación de aplicaciones
+            dinámicas y escalables. Me apasiona aprender nuevas tecnologías y
+            aplicarlas en mis proyectos.
+        </p>
+        
+        <a class="col-span-12 md:col-span-3 btn-primary flex items-center gap-2" href="#contact">
+            <Mail />
+            <span>francortiz.c@gmail.com</span>
+        </a>
+        <a class="col-span-12 md:col-span-3 btn-secondary flex items-center gap-2" href="#projects">
+            <Linkedin />
+            <span>Linkedin</span>
+        </a>
+        <a class="col-span-12 md:col-span-3 btn-secondary flex items-center gap-2" href="#projects">
+            <Github />
+            <span>Github</span>
+        </a>
+        <a aria-label="descargar cv Franco Ortiz" class="col-span-12 md:col-span-3 btn-secondary flex items-center gap-2 p-2 rounded-full"
+            href="/assets/Franco-Ortiz-CV.pdf" target="_blank">
+            <span>CV</span>
+            <Download />
+        </a>
+    </div>    
+ 
+</section>    
+

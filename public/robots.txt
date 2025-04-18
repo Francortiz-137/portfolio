@@ -1,0 +1,10 @@
+# Bloquea todos los bots de acceder a carpetas sensibles (si existen)
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Permite el acceso al resto del sitio
+Allow: /
+
+# Opcional: especifica el enlace al sitemap si tienes uno
+Sitemap: https://tusitio.com/sitemap.xml
