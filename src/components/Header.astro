@@ -1,15 +1,19 @@
 ---
 import { Menu } from '@lucide/astro';
 import ThemeToggle from './ThemeToggle.astro';
+import Logo from './Logo.astro';
 
 ---
 
-<header class="sticky top-0 z-50 w-screen bg-zinc-50 dark:bg-zinc-950 md:bg-transparent dark:md:bg-transparent md:backdrop-blur-lg transition-all duration-300 ease-in-out">
+<header class="sticky top-0 z-50 w-screen bg-zinc-50 dark:bg-zinc-950 md:bg-transparent dark:md:bg-transparent md:backdrop-blur-sm transition-all duration-300 ease-in-out">
     <nav class="bg-transparent  p-4">
         <div class="container flex justify-between items-center mx-auto">
-          <div class="text-xl font-bold">
-            <a href="/">Franco Ortiz</a>
-          </div>
+            <a class="flex items-center gap-x-2 text-primary dark:text-white font-bold text-2xl" 
+                href="/">
+              <Logo class="size-16 rounded-full mx-auto text-primary dark:text-secondary" />
+              <span class="hidden md:block md:text-2xl">Franco Ortiz</span>
+            </a>
+          
       
           <div class="md:hidden ">
             <input type="checkbox" id="menu-toggle" class="hidden peer absolute" />
@@ -18,7 +22,7 @@ import ThemeToggle from './ThemeToggle.astro';
               <Menu/>
             </label>
       
-            <div class="hidden peer-checked:block absolute right-0 mt-4 w-full bg-zinc-50 dark:bg-zinc-950 rounded-lg shadow-lg p-4 space-y-3">
+            <div class="hidden peer-checked:block absolute right-0 mt-6 w-full bg-zinc-50 dark:bg-zinc-950 rounded-lg shadow-lg p-4 space-y-3 text-center">
               <a href="#" class="block link">Home</a>
               <a href="#about" class="block link">About</a>
               <a href="#projects" class="block link">Projects</a>

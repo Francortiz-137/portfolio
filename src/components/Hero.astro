@@ -2,16 +2,17 @@
 import { Download, Linkedin } from "@lucide/astro";
 import { Github } from "@lucide/astro";
 import { Mail } from "@lucide/astro";
+import Logo from "./Logo.astro";
 ---
 <section  id={Astro.props.id} >
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
-        <h1 class="col-span-12 md:col-span-6 title text-start">
+        <h1 class="col-span-6 title text-start self-center">
             Hola! Soy 
             <br>
             <span>Franco Ortiz</span>
         </h1>
-        <img src="/favicon.svg" alt="Logo Franco Ortiz" 
-            class="col-span-12 md:col-span-6 w-32 h-32 rounded-full mx-auto mb-4" />
+        <Logo
+            class="col-span-6 size-32 md:size-64 rounded-full mx-auto mb-4 text-primary dark:text-secondary border" />
     
         <p class="col-span-12 text-left my-4 text-lg max-w-2xl text-xl text-pretty">
             Desarrollador web con experiencia en la creación de aplicaciones
@@ -19,24 +20,28 @@ import { Mail } from "@lucide/astro";
             aplicarlas en mis proyectos.
         </p>
         
-        <a class="col-span-12 md:col-span-3 btn-primary flex items-center gap-2" href="#contact">
+        <a class="col-span-12 md:col-span-4 btn-primary flex items-center gap-2" href="#contact">
             <Mail />
             <span>francortiz.c@gmail.com</span>
         </a>
-        <a class="col-span-12 md:col-span-3 btn-secondary flex items-center gap-2" href="#projects">
+        <a class="col-span-12 md:col-span-4 btn-secondary flex items-center gap-2" href="#projects">
             <Linkedin />
             <span>Linkedin</span>
         </a>
-        <a class="col-span-12 md:col-span-3 btn-secondary flex items-center gap-2" href="#projects">
+        <a class="col-span-12 md:col-span-4 btn-secondary flex items-center gap-2" href="#projects">
             <Github />
             <span>Github</span>
-        </a>
-        <a aria-label="descargar cv Franco Ortiz" class="col-span-12 md:col-span-3 btn-secondary flex items-center gap-2 p-2 rounded-full"
-            href="/assets/Franco-Ortiz-CV.pdf" target="_blank">
-            <span>CV</span>
-            <Download />
-        </a>
+        </a>      
     </div>    
- 
+    <div class="flex flex-col items-center justify-center gap-4 col-span-12 md:col-span-6 pt-8">
+        <label for="#curriculum">
+           <input type="checkbox" id="curriculum" class="hidden peer absolute" />
+           <span class="peer-checked:hidden">Descargar Curriculum</span>
+       </label>
+       <a id="curriculum" aria-label="descargar cv Franco Ortiz" class="flex items-center justify-center btn-secondary border-2 p-2 rounded-full hover:bg-primary hover:dark:bg-secondary hover:dark:text-black transition-all duration-300 ease-in-out"
+           href="/assets/Franco-Ortiz-CV.pdf" target="_blank">
+           <Download class="size-12"/>
+       </a>
+   </div>
 </section>    
 

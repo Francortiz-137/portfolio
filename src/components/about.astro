@@ -1,19 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import SectionContainer from "@layouts/SectionContainer.astro";
 
 
 ---
-<section  id={Astro.props.id}>
+<SectionContainer id={Astro.props.id}>
   <h1 class="title">
-    About
+    About me
   </h1>
   <div class="backdrop-blur-lg shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-center">
-    <p class="text-pretty">This is the about page.
-      Here you can find information about me.
-      My name is Franco Ortiz, I am a web developer.</p>
-
-  </div>
-  
-    
-</section>
+    <p class="text-pretty">Soy Franco Ignacio Ortiz Cabrera, un Desarrollador con experiencia en creación de aplicaciones web del lado del servidor (Back-end) utilizando varios lenguajes y Frameworks, y conocimiento en APIs. Me entusiasma la ciencia de datos, computer vision, el machine learning y el desarrollo web. Además, en mi tiempo libre, me gusta aprender nuevas tecnologías y desarrollar videojuegos.</p>
+  </div>  
+</SectionContainer>
   
