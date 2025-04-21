@@ -1,8 +1,22 @@
 ---
 import { Sun, Moon } from '@lucide/astro';
 ---
-<button class="hover:bg-gray-400 p-2 rounded-full" aria-label="Toggle dark mode"
-  onclick="document.documentElement.classList.toggle('dark')">
+
+<button class="theme-toggle hover:bg-gray-400 p-2 rounded-full" aria-label="Toggle dark mode">
   <Sun class="block dark:hidden" />
   <Moon class="hidden dark:block" />
 </button>
+
+<script>
+  // Seleccionar todos los botones con el ID 'theme-toggle'
+  const buttons = document.querySelectorAll('#theme-toggle');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Alternar la clase 'dark' en el <html> para cambiar el tema
+      const isDark = document.documentElement.classList.toggle('dark');
+      // Guardar la preferencia en localStorage
+      localStorage.theme = isDark ? 'dark' : 'light';
+    });
+  });
+</script>

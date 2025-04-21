@@ -14,6 +14,8 @@ const projectsCollection = defineCollection({
         tags: z.array(z.string()),
         image: z.string(),
         url: z.string(),
+        deployurl: z.string(),
+        order: z.number(),
     }),
 });
 

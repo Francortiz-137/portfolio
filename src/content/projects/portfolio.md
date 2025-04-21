@@ -3,5 +3,7 @@
   description: "Estas aqui! un lugar donde puedes ver mis proyectos y habilidades."
   image: "/favicon.svg"
   url: "https://example.com/portfolio"
+  deployurl: "https://example.com/blog-personal"
   tags: ["web", "design", "development", "astro", "html", "css", "tailwindcss"]
+  order: 1
 ---

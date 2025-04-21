@@ -1,6 +1,7 @@
 ---
 import SectionContainer from "@layouts/SectionContainer.astro";
 import { getCollection } from "astro:content";
+import Card from "./Card.astro";
 
 const projects = await getCollection("projects");
 interface Project {
@@ -11,25 +12,25 @@ interface Project {
         tags: string[];
         image: string;
         url: string;
+        deployurl: string;
+        order: number;
     };
 }
+projects.sort((a: Project, b: Project) => {
+    return a.data.order - b.data.order ;
+});
 ---
 
-<SectionContainer  id={Astro.props.id}>
+<SectionContainer id={Astro.props.id}>
     <h2 class="title">Proyectos</h2>
 
-    <div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-12">
         {
             projects.map((project: Project) => {
                 const {slug, data} = project;
-                const {title, description, tags, image, url} = data;
+                const {title, description, tags, image, url, deployurl} = data;
                 return (
-                    <div class="card">
-                        <a href={url} class="card-link">
-                            <h2>{title}</h2>
-                            <p>{description}</p>
-                        </a>
-                    </div>
+                    <Card title={title} description={description} url={url} image={image} deployurl={deployurl} tags={tags}/>
                 );
             })
         }

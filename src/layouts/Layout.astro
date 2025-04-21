@@ -5,20 +5,35 @@ import Header from '../components/Header.astro';
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth no-transition">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Franco Ortiz - Portfolio</title>
+		<script>
+			document.documentElement.classList.toggle(
+			"dark",
+			localStorage.theme === "dark" ||
+				(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+			);
+		</script>
+		
 	</head>
 	<body class="bg-zinc-100 dark:bg-zinc-950 dark:md:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] 
 				text-black dark:text-white transition-colors duration-300">
 		<Header/>
-		<main class="flex flex-col items-center justify-center max-w-6xl mx-auto px-4 py-2">
+		<main class="flex flex-col items-center justify-center mx-auto px-4 py-2">
 			<slot />
 		</main>
 		<Footer/>
+		<script>
+			window.addEventListener('load', () => {
+			document.documentElement.classList.remove('no-transition');
+			setupThemeToggles();
+			});
+		</script>
 	</body>
+	
 </html>

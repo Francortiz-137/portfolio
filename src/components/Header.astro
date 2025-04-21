@@ -19,7 +19,7 @@ import Logo from './Logo.astro';
             <input type="checkbox" id="menu-toggle" class="hidden peer absolute" />
       
             <label for="menu-toggle" class="cursor-pointer flex items-center">
-              <Menu/>
+              <Menu id="menu-toggle"/>
             </label>
       
             <div class="hidden peer-checked:block absolute right-0 mt-6 w-full bg-zinc-50 dark:bg-zinc-950 rounded-lg shadow-lg p-4 space-y-3 text-center">
@@ -48,3 +48,14 @@ import Logo from './Logo.astro';
       </nav>
 
 </header>
+<script>
+  const buttons = document.querySelectorAll('.theme-toggle');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
+    });
+  });
+</script>
+
