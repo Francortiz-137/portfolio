@@ -4,7 +4,6 @@ import { Github } from "@lucide/astro";
 import { Mail } from "@lucide/astro";
 import Logo from "./Logo.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
-import LogoSecondary from "./LogoSecondary.astro";
 ---
 <SectionContainer  id={Astro.props.id} >
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
@@ -15,22 +14,23 @@ import LogoSecondary from "./LogoSecondary.astro";
         </h1>
         <Logo
             class="col-span-6 size-32 md:size-64 rounded-full mx-auto mb-4 neon text-primary dark:text-secondary" />
-        <p class="col-span-12 text-left my-4 text-lg max-w-2xl text-xl text-pretty">
+       
+            <p class="col-span-12 text-left my-4 text-lg max-w-2xl text-xl text-pretty">
             Desarrollador web con experiencia en la creación de aplicaciones
             dinámicas y escalables. Me apasiona aprender nuevas tecnologías y
             aplicarlas en mis proyectos.
         </p>
 
         <div class="col-span-12 md:col-span-8 flex flex-col md:flex-row items-start justify-start gap-4">
-            <button class="pill-secondary" onclick="navigator.clipboard.writeText('francortiz.c@gmail.com').then(() => alert('Correo copiado al portapapeles!'))">
+            <button class="pill-secondary neon" onclick="navigator.clipboard.writeText('francortiz.c@gmail.com').then(() => alert('Correo copiado al portapapeles!'))">
                 <Mail />
                 <span>francortiz.c@gmail.com</span>
             </button>
-            <a class="pill-primary" href="#projects">
+            <a class="pill-primary neon" href="https://www.linkedin.com/in/franco-ortiz-cabrera/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin de Franco Ortiz">
                 <Linkedin />
                 <span>Linkedin</span>
             </a>
-            <a class="pill-primary" href="#projects">
+            <a class="pill-primary neon" href="https://github.com/Francortiz-137" target="_blank" rel="noopener noreferrer" aria-label="Github de Franco Ortiz">
                 <Github />
                 <span>Github</span>
             </a>
@@ -39,7 +39,7 @@ import LogoSecondary from "./LogoSecondary.astro";
             href="/assets/Franco-Ortiz-CV.pdf" 
             target="_blank" 
             aria-label="Descargar CV de Franco Ortiz"
-            class="pill-primary"
+            class="pill-primary neon"
           >
             <Download />
             <span>Curriculum</span>
