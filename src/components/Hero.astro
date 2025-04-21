@@ -3,8 +3,9 @@ import { Download, Linkedin } from "@lucide/astro";
 import { Github } from "@lucide/astro";
 import { Mail } from "@lucide/astro";
 import Logo from "./Logo.astro";
+import SectionContainer from "@layouts/SectionContainer.astro";
 ---
-<section  id={Astro.props.id} >
+<SectionContainer  id={Astro.props.id} >
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
         <h1 class="col-span-6 title text-start self-center">
             Hola! Soy 
@@ -19,29 +20,34 @@ import Logo from "./Logo.astro";
             dinámicas y escalables. Me apasiona aprender nuevas tecnologías y
             aplicarlas en mis proyectos.
         </p>
+
+        <div class="col-span-12 md:col-span-8 flex flex-col md:flex-row items-start justify-start gap-4">
+            <a class="pill-secondary" href="#contact">
+                <Mail />
+                <span>francortiz.c@gmail.com</span>
+            </a>
+            <a class="pill-primary" href="#projects">
+                <Linkedin />
+                <span>Linkedin</span>
+            </a>
+            <a class="pill-primary" href="#projects">
+                <Github />
+                <span>Github</span>
+            </a>
+            
+            <a 
+            href="/assets/Franco-Ortiz-CV.pdf" 
+            target="_blank" 
+            aria-label="Descargar CV de Franco Ortiz"
+            class="pill-primary"
+          >
+            <Download />
+            <span>Curriculum</span>
+          </a>
+        </div>
         
-        <a class="col-span-12 md:col-span-4 btn-primary flex items-center gap-2" href="#contact">
-            <Mail />
-            <span>francortiz.c@gmail.com</span>
-        </a>
-        <a class="col-span-12 md:col-span-4 btn-secondary flex items-center gap-2" href="#projects">
-            <Linkedin />
-            <span>Linkedin</span>
-        </a>
-        <a class="col-span-12 md:col-span-4 btn-secondary flex items-center gap-2" href="#projects">
-            <Github />
-            <span>Github</span>
-        </a>      
+              
     </div>    
-    <div class="flex flex-col items-center justify-center gap-4 col-span-12 md:col-span-6 pt-8">
-        <label for="#curriculum">
-           <input type="checkbox" id="curriculum" class="hidden peer absolute" />
-           <span class="peer-checked:hidden">Descargar Curriculum</span>
-       </label>
-       <a id="curriculum" aria-label="descargar cv Franco Ortiz" class="flex items-center justify-center btn-secondary border-2 p-2 rounded-full hover:bg-primary hover:dark:bg-secondary hover:dark:text-black transition-all duration-300 ease-in-out"
-           href="/assets/Franco-Ortiz-CV.pdf" target="_blank">
-           <Download class="size-12"/>
-       </a>
-   </div>
-</section>    
+   
+</SectionContainer>    
 

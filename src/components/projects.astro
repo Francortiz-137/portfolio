@@ -1,7 +1,38 @@
 ---
+import SectionContainer from "@layouts/SectionContainer.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+interface Project {
+    slug: string;
+    data: {
+        title: string;
+        description: string;
+        tags: string[];
+        image: string;
+        url: string;
+    };
+}
 ---
 
-<section  id={Astro.props.id}>
+<SectionContainer  id={Astro.props.id}>
     <h1 class="title">Proyectos</h1>
-</section>
+
+    <div>
+        {
+            projects.map((project: Project) => {
+                const {slug, data} = project;
+                const {title, description, tags, image, url} = data;
+                return (
+                    <div class="card">
+                        <a href={url} class="card-link">
+                            <h2>{title}</h2>
+                            <p>{description}</p>
+                        </a>
+                    </div>
+                );
+            })
+        }
+    </div>
+</SectionContainer>
     

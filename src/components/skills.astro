@@ -1,6 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import SectionContainer from "@layouts/SectionContainer.astro"
+import { getCollection } from "astro:content";
+
+const skills = await getCollection("skills");
+interface Skill {
+    slug: string;
+    data: {
+        name: string;
+        icon: string;
+        description: string;
+    };
+}
+
 ---
-<section id={Astro.props.id}>
+<SectionContainer id={Astro.props.id}>
     <h1 class="title">Skills</h1>
-</section>
+    <div>
+        {
+            skills.map((skill: Skill) => {
+                const { slug, data } = skill;
+                const { name, icon, description } = data;
+                return (
+                    <div class="card">
+                        <a href={slug} class="card-link">
+                            <h2>{name}</h2>
+                            <p>{description}</p>
+                        </a>
+                    </div>
+                );
+            })
+        }
+    </div>
+</SectionContainer>
