@@ -4,6 +4,7 @@ import { Github } from "@lucide/astro";
 import { Mail } from "@lucide/astro";
 import Logo from "./Logo.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
+import LogoSecondary from "./LogoSecondary.astro";
 ---
 <SectionContainer  id={Astro.props.id} >
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
@@ -13,8 +14,7 @@ import SectionContainer from "@layouts/SectionContainer.astro";
             <span>Franco Ortiz</span>
         </h1>
         <Logo
-            class="col-span-6 size-32 md:size-64 rounded-full mx-auto mb-4 text-primary dark:text-secondary border" />
-    
+            class="col-span-6 size-32 md:size-64 rounded-full mx-auto mb-4 neon text-primary dark:text-secondary" />
         <p class="col-span-12 text-left my-4 text-lg max-w-2xl text-xl text-pretty">
             Desarrollador web con experiencia en la creación de aplicaciones
             dinámicas y escalables. Me apasiona aprender nuevas tecnologías y
@@ -22,10 +22,10 @@ import SectionContainer from "@layouts/SectionContainer.astro";
         </p>
 
         <div class="col-span-12 md:col-span-8 flex flex-col md:flex-row items-start justify-start gap-4">
-            <a class="pill-secondary" href="#contact">
+            <button class="pill-secondary" onclick="navigator.clipboard.writeText('francortiz.c@gmail.com').then(() => alert('Correo copiado al portapapeles!'))">
                 <Mail />
                 <span>francortiz.c@gmail.com</span>
-            </a>
+            </button>
             <a class="pill-primary" href="#projects">
                 <Linkedin />
                 <span>Linkedin</span>

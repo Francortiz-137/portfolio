@@ -30,6 +30,9 @@
     .pill-secondary{
         @apply flex items-center gap-2 bg-transparent hover:bg-primary text-primary dark:text-secondary font-semibold rounded-full text-sm hover:text-white py-2 px-4 border border-primary dark:border-secondary hover:border-transparent;
     }
+    .neon{
+        @apply shadow-xl hover:shadow-2xl transition transform hover:scale-105 hover:shadow-[0_0_25px_rgba(150,150,255,0.8)]
+    }
   }
 
  
