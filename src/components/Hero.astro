@@ -4,20 +4,22 @@ import { Github } from "@lucide/astro";
 import { Mail } from "@lucide/astro";
 import Logo from "./Logo.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
+import ContentContainer from "@layouts/ContentContainer.astro";
 
 const email = "francortiz.c@gmail.com";
 ---
 
 <SectionContainer id={Astro.props.id} class="">
-  <div
+  <ContentContainer
     class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-8 gap-4 shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md"
   >
     <h1
-      class="col-span-8 md:col-span-4 order-2 md:order-1 title text-start self-center"
+      class="col-span-8 md:col-span-4 order-2 md:order-1 title text-center md:text-start self-center text-pretty text-4xl md:text-5xl lg:text-6xl font-bold"
     >
       Hola! Soy
-      <br />
-      <span>Franco Ortiz</span>
+      <br class="hidden md:block"/>
+      <span class="text-accent font-extrabold">Franco Ortiz</span>
+      Desarrollador Web
     </h1>
     <Logo
       class="col-span-8 md:col-span-4 order-1 size-32 md:size-64 rounded-full mx-auto mb-4 neon text-primary dark:text-secondary"
@@ -26,15 +28,16 @@ const email = "francortiz.c@gmail.com";
     <p
       class="col-span-8 order-3 text-left my-4 text-lg max-w-2xl text-xl text-pretty"
     >
-      Desarrollador web con experiencia en la creación de aplicaciones dinámicas
+      Desarrollador FullStack con experiencia en la creación de aplicaciones dinámicas
       y escalables. Me apasiona aprender nuevas tecnologías y aplicarlas en mis
       proyectos.
     </p>
 
     <div
-      class="col-span-8 md:col-span-8 order-4 flex flex-col md:flex-row items-start justify-start gap-4"
+      class="col-span-8 md:col-span-8 order-4 flex flex-col md:flex-row items-stretch md:items-center justify-start gap-4"
     >
-      <button
+    <div class="relative group inline-block ">
+      <button 
         class="pill-secondary neon"
         aria-label="Copiar correo de Franco Ortiz"
         id="copy-btn"
@@ -42,6 +45,11 @@ const email = "francortiz.c@gmail.com";
         <Mail />
         <span>{email}</span>
       </button>
+      <div class="absolute bottom-full mb-2 hidden group-hover:block bg-primary text-white text-sm px-2 py-1 rounded shadow-lg whitespace-nowrap z-10">
+        Copiar al portapapeles 
+      </div>
+    </div>
+      
       <a
         class="pill-primary neon"
         href="https://www.linkedin.com/in/franco-ortiz-cabrera/"
@@ -79,7 +87,7 @@ const email = "francortiz.c@gmail.com";
     >
       Correo copiado al portapapeles!
     </p>
-  </div>
+  </ContentContainer>
 
   
   

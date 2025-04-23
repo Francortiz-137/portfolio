@@ -1,11 +1,13 @@
 ---
+import ContentContainer from "@layouts/ContentContainer.astro"
 import SectionContainer from "@layouts/SectionContainer.astro"
 ---
 <SectionContainer id={Astro.props.id}>
     <h2 class="title">Contact</h2>
     <p>Tienes una idea para un proyecto? Hablemos para volverla realidad</p>
-    <div class="backdrop-blur-lg flex flex-col justify-center items-center shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty">
-        <p class="text-pretty">Puedes contactarme a través de mi correo electrónico o mis redes sociales. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+    <p class="text-pretty">Puedes contactarme a través de mi correo electrónico o mis redes sociales. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+        
+    <ContentContainer class="backdrop-blur-lg flex flex-col justify-center items-center shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty">
         <form action="/api/contact" method="POST" class="bg-secondary/20 py-6 mt-4 md:p-6 rounded-lg shadow-xl  space-y-4">
             <h1 class="text-xl font-bold text-primary">Contáctanos</h1>
       
@@ -22,5 +24,6 @@ import SectionContainer from "@layouts/SectionContainer.astro"
               class="w-full bg-primary hover:bg-primary text-white font-semibold p-3 rounded transition">Enviar</button>
           </form>
             <p class="text-pretty">O puedes escribirme directamente a mi correo: <a href="mailto:francortiz.c@gmail.com" class="text-primary"> francortiz.c@gmail.com</a>
-</SectionContainer>
+    </ContentContainer>
+            </SectionContainer>
 

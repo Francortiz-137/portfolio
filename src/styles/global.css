@@ -7,6 +7,9 @@
   @theme {
     --color-primary: #2a0478;
     --color-secondary: #d9d9d9;
+    --color-accent: #27a9f5;
+    --color-dark: #011640;
+    --color-terciary: #244e73;
   }
 
 @layer components {
@@ -28,7 +31,8 @@
         @apply flex justify-center md:justify-start items-center gap-2 bg-primary text-white font-bold py-2 px-4 min-w-[146px] rounded-full text-sm;
     }
     .pill-secondary{
-        @apply flex justify-center md:justify-start items-center gap-2 bg-transparent hover:bg-primary text-primary dark:text-secondary font-semibold rounded-full text-sm hover:text-white py-2 px-4 border border-primary dark:border-secondary hover:border-transparent;
+        @apply flex justify-center md:justify-start items-center gap-2 bg-transparent hover:bg-accent text-primary dark:text-secondary font-semibold rounded-full text-sm hover:text-white py-2 px-4 
+        border border-primary dark:border-secondary hover:border-transparent;
     }
     .neon{
         @apply shadow-xl hover:shadow-2xl transition transform hover:scale-105 hover:shadow-[0_0_25px_rgba(150,150,255,0.8)]
