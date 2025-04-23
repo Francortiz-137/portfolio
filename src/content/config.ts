@@ -4,7 +4,7 @@ const skillsCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     icon: z.string(),
-    description: z.string(),
+    category: z.string(),
   }),
 });
 const projectsCollection = defineCollection({

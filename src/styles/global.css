@@ -6,33 +6,35 @@
 
   @theme {
     --color-primary: #2a0478;
-    --color-secondary: #d9d9d9;
+    --color-secondary: #233f99;
     --color-accent: #27a9f5;
+    --color-pink: #ba1181;
     --color-dark: #011640;
-    --color-terciary: #244e73;
+    --color-terciary: #5f5ee3;
+    --color-light: #d9d9d9;
   }
 
 @layer components {
     .btn-primary {
-        @apply bg-primary text-white font-bold py-2 px-4 rounded rounded-lg hover:bg-secondary;
+        @apply bg-primary text-white font-bold py-2 px-4 rounded rounded-lg hover:bg-light;
     }
     .btn-secondary {
-        @apply bg-transparent hover:bg-primary text-primary dark:text-secondary font-semibold rounded rounded-lg hover:text-white py-2 px-4 border border-primary dark:border-secondary hover:border-transparent rounded;
+        @apply bg-transparent hover:bg-primary text-primary dark:text-light font-semibold rounded rounded-lg hover:text-white py-2 px-4 border border-primary dark:border-light hover:border-transparent rounded;
     }
 
     .link{
-        @apply hover:text-primary transition;
+        @apply hover:text-accent transition;
     }
 
     .title{
-        @apply pb-8 text-center font-bold text-4xl lg:text-6xl text-primary dark:text-secondary mb-4;
+        @apply pb-8 text-center font-bold text-4xl lg:text-6xl text-dark dark:text-light mb-4;
     }
     .pill-primary{
         @apply flex justify-center md:justify-start items-center gap-2 bg-primary text-white font-bold py-2 px-4 min-w-[146px] rounded-full text-sm;
     }
     .pill-secondary{
-        @apply flex justify-center md:justify-start items-center gap-2 bg-transparent hover:bg-accent text-primary dark:text-secondary font-semibold rounded-full text-sm hover:text-white py-2 px-4 
-        border border-primary dark:border-secondary hover:border-transparent;
+        @apply flex justify-center md:justify-start items-center gap-2 bg-transparent hover:bg-accent text-primary dark:text-light font-semibold rounded-full text-sm hover:text-white py-2 px-4 
+        border border-primary dark:border-light hover:border-transparent;
     }
     .neon{
         @apply shadow-xl hover:shadow-2xl transition transform hover:scale-105 hover:shadow-[0_0_25px_rgba(150,150,255,0.8)]

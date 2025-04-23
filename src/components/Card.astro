@@ -1,7 +1,13 @@
 ---
+import { Github, Globe } from "@lucide/astro";
+
 const { url, title, description, image, deployurl, tags } = Astro.props;
 const { slug } = Astro.params;
-
+interface Tag {
+    name: string;
+    icon: string;
+    color: string;
+}
 ---
 
 <article class="flex flex-col items-center justify-start w-full  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -11,19 +17,25 @@ const { slug } = Astro.params;
     </div>
     <div class="p-4">
         <div>
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2 class="text-dark dark:text-light font-bold mb-2">{title}</h2>
+            <p class="text-gray-400">{description}</p>
             <div>
                 <ul class="flex flex-wrap gap-2 mt-2">
-                    {Astro.props.tags.map((tag:string) => (
-                        <li class="px-2 py-1 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">{tag}</li>
+                    {Astro.props.tags.map((tag:Tag) => (
+                        <li class="px-2 py-1 text-sm font-semibold text-dark bg-gray-200 dark:bg-dark rounded-full dark:text-gray-300" 
+                       >
+                            <img src={tag.icon} alt={tag.name} class="inline-block w-4 h-4 mr-1" loading="lazy" />
+                            {tag.name} </li>
                     ))}
                 </ul>
             </div>
         </div>
-        <div>
-        <a href={url}>Github</a>
-            { deployurl && <a href={deployurl}>Web</a>}
+        <div class="mt-4 flex justify-center gap-4 text-accent">
+        <a class="flex" href={url}> <Github/> Github</a>
+            { deployurl && 
+            <a class="flex" href={deployurl}>
+                <Globe/>
+                Web</a>}
         </div>
     </div>
     

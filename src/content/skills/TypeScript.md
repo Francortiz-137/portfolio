@@ -1,6 +1,6 @@
 ---
 name: "TypeScript"
-description: "TypeScript is a strongly typed programming language that builds on JavaScript, adding static types."
+category: "frontend"
 tags: ["programming", "web development", "frontend", "backend"]
-icon: "/assets/skills/typescript.svg"
+icon: "/assets/logos/typescript.svg"
 ---

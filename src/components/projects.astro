@@ -8,6 +8,7 @@ const projects = await getCollection("projects");
 interface Tag {
     name: string;
     icon: string;
+    color: string;
 }
 interface Project {
     slug: string;
@@ -42,7 +43,7 @@ const enrichedProjects = projects.map((project) => {
 
     <div class="w-full max-w-6xl mx-auto px-4 columns-[300px] gap-4 space-y-4">
         {
-          projects
+          enrichedProjects
             .sort((a, b) => a.data.order - b.data.order)
             .map((project: Project) => {
               const { title, description, tags, image, url, deployurl } = project.data;

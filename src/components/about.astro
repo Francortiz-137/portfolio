@@ -1,18 +1,20 @@
 ---
 import ContentContainer from "@layouts/ContentContainer.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
+import { Paperclip } from "@lucide/astro";
 
 
 ---
-<SectionContainer id={Astro.props.id}  class="max-w-none bg-primary">
-  <h2 class="title text-secondary">
+<SectionContainer id={Astro.props.id}  class="max-w-none bg-terciary">
+  <h2 class="title text-light">
     Sobre mí
   </h2>
-  <ContentContainer class="backdrop-blur-lg shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty text-secondary">
-    <p>Soy Franco Ortiz Cabrera, desarrollador fullstack con experiencia en tecnologías como Angular, Spring Boot y Node.js. Graduado de la Pontificia Universidad Católica de Valparaíso, me especializo en crear aplicaciones eficientes y escalables, utilizando tanto bases de datos relacionales (MySQL) como no relacionales (MongoDB). 
+  <ContentContainer class="grid grid-cols-1 md:grid-cols-2 gap-4 p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty text-light">
+    <p class="order-1">Soy Franco Ortiz Cabrera, desarrollador fullstack con experiencia en tecnologías como Angular, Spring Boot y Node.js. Graduado de la Pontificia Universidad Católica de Valparaíso, me especializo en crear aplicaciones eficientes y escalables, utilizando tanto bases de datos relacionales (MySQL) como no relacionales (MongoDB). 
     </p>
-    <p>Me apasiona crear soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos.</p>
-    <p>Busco oportunidades que me permitan continuar creciendo profesionalmente en el desarrollo de aplicaciones web y backend.</p>
+    <Paperclip class="size-[256px] order-2"/>
+    <p class="order-3 md:order-4">Me apasiona crear soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos.Busco oportunidades que me permitan continuar creciendo profesionalmente en el desarrollo de aplicaciones web y backend.</p>
+    <Paperclip class="size-[256px] order-4 md:order-3"/>
   </ContentContainer>  
 </SectionContainer>
   
