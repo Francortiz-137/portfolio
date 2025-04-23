@@ -4,6 +4,6 @@ description: "Una aplicación de comercio electrónico con carrito de compras, p
 image: "/projects/ecommerce-app.png"
 url: "https://example.com/ecommerce-app"
 deployurl: ""
-tags: ["web", "ecommerce", "react", "nodejs", "tailwindcss", "mongodb"]
+tags: ["react", "nodejs", "tailwindcss", "mongodb"]
 order: 2
 ---

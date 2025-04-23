@@ -2,38 +2,66 @@
 import SectionContainer from "@layouts/SectionContainer.astro";
 import { getCollection } from "astro:content";
 import Card from "./Card.astro";
+import { tags } from "@utils/technologies";
 
 const projects = await getCollection("projects");
+interface Tag {
+    name: string;
+    icon: string;
+}
 interface Project {
     slug: string;
     data: {
         title: string;
         description: string;
-        tags: string[];
+        tags: Tag[];
         image: string;
         url: string;
         deployurl: string;
         order: number;
     };
 }
-projects.sort((a: Project, b: Project) => {
-    return a.data.order - b.data.order ;
+
+const enrichedProjects = projects.map((project) => {
+  const enrichedTags = project.data.tags
+    .map((tagKey: string) => tags[tagKey])
+    .filter(Boolean); // por si hay una clave que no existe
+
+  return {
+    ...project,
+    data: {
+      ...project.data,
+      tags: enrichedTags,
+    },
+  };
 });
 ---
 
 <SectionContainer id={Astro.props.id}>
     <h2 class="title">Proyectos</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-12">
+    <div class="w-full max-w-6xl mx-auto px-4 columns-[300px] gap-4 space-y-4">
         {
-            projects.map((project: Project) => {
-                const {slug, data} = project;
-                const {title, description, tags, image, url, deployurl} = data;
-                return (
-                    <Card title={title} description={description} url={url} image={image} deployurl={deployurl} tags={tags}/>
-                );
+          projects
+            .sort((a, b) => a.data.order - b.data.order)
+            .map((project: Project) => {
+              const { title, description, tags, image, url, deployurl } = project.data;
+      
+              return (
+                <div class="break-inside-avoid">
+                  <Card
+                    title={title}
+                    description={description}
+                    url={url}
+                    image={image}
+                    deployurl={deployurl}
+                    tags={tags}
+                  />
+                </div>
+              );
             })
         }
-    </div>
+      </div>
+      
 </SectionContainer>
     

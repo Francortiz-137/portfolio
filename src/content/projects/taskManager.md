@@ -4,6 +4,6 @@ description: "Aplicación para gestionar tareas con soporte para etiquetas, fech
 image: "/images/task-manager.png"
 url: "https://example.com/task-manager"
 deployurl: "https://example.com/blog-personal"
-tags: ["web", "productivity", "vue", "firebase", "tailwindcss"]
+tags: ["vue", "firebase", "tailwindcss"]
 order: 4
 ---

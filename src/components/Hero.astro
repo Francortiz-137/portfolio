@@ -6,70 +6,100 @@ import Logo from "./Logo.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
 
 const email = "francortiz.c@gmail.com";
-
 ---
-<SectionContainer  id={Astro.props.id} >
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mt-4">
-        <h1 class="col-span-12 md:col-span-6 order-2 md:order-1 title text-start self-center">
-            Hola! Soy 
-            <br>
-            <span>Franco Ortiz</span>
-        </h1>
-        <Logo
-            class="col-span-12 md:col-span-6 order-1 size-32 md:size-64 rounded-full mx-auto mb-4 neon text-primary dark:text-secondary" />
-       
-            <p class="col-span-12 order-3 text-left my-4 text-lg max-w-2xl text-xl text-pretty">
-            Desarrollador web con experiencia en la creación de aplicaciones
-            dinámicas y escalables. Me apasiona aprender nuevas tecnologías y
-            aplicarlas en mis proyectos.
-        </p>
 
-        <div class="col-span-12 md:col-span-8 order-4 flex flex-col md:flex-row items-start justify-start gap-4">
-            <button class="pill-secondary neon" aria-label="Copiar correo de Franco Ortiz" id="copy-btn">
-                <Mail />
-                <span>{email}</span>
-            </button>
-            <a class="pill-primary neon" href="https://www.linkedin.com/in/franco-ortiz-cabrera/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin de Franco Ortiz">
-                <Linkedin />
-                <span>Linkedin</span>
-            </a>
-            <a class="pill-primary neon" href="https://github.com/Francortiz-137" target="_blank" rel="noopener noreferrer" aria-label="Github de Franco Ortiz">
-                <Github />
-                <span>Github</span>
-            </a>
-            
-            <a 
-            href="/assets/Franco-Ortiz-CV.pdf" 
-            target="_blank" 
-            aria-label="Descargar CV de Franco Ortiz"
-            class="pill-primary neon"
-          >
-            <Download />
-            <span>Curriculum</span>
-          </a>
-        </div>
-        <p id="copy-email" class=" col-span-12 order-5 opacity-0 transition-translate-x-4 transition-opacity duration-300 ease-in-out">Correo copiado al portapapeles!</p>
-              
-    </div>    
-   
-</SectionContainer>    
+<SectionContainer id={Astro.props.id} class="">
+  <div
+    class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-8 gap-4 shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md"
+  >
+    <h1
+      class="col-span-8 md:col-span-4 order-2 md:order-1 title text-start self-center"
+    >
+      Hola! Soy
+      <br />
+      <span>Franco Ortiz</span>
+    </h1>
+    <Logo
+      class="col-span-8 md:col-span-4 order-1 size-32 md:size-64 rounded-full mx-auto mb-4 neon text-primary dark:text-secondary"
+    />
+
+    <p
+      class="col-span-8 order-3 text-left my-4 text-lg max-w-2xl text-xl text-pretty"
+    >
+      Desarrollador web con experiencia en la creación de aplicaciones dinámicas
+      y escalables. Me apasiona aprender nuevas tecnologías y aplicarlas en mis
+      proyectos.
+    </p>
+
+    <div
+      class="col-span-8 md:col-span-8 order-4 flex flex-col md:flex-row items-start justify-start gap-4"
+    >
+      <button
+        class="pill-secondary neon"
+        aria-label="Copiar correo de Franco Ortiz"
+        id="copy-btn"
+      >
+        <Mail />
+        <span>{email}</span>
+      </button>
+      <a
+        class="pill-primary neon"
+        href="https://www.linkedin.com/in/franco-ortiz-cabrera/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Linkedin de Franco Ortiz"
+      >
+        <Linkedin />
+        <span>Linkedin</span>
+      </a>
+      <a
+        class="pill-primary neon"
+        href="https://github.com/Francortiz-137"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Github de Franco Ortiz"
+      >
+        <Github />
+        <span>Github</span>
+      </a>
+
+      <a
+        href="/assets/Franco-Ortiz-CV.pdf"
+        target="_blank"
+        aria-label="Descargar CV de Franco Ortiz"
+        class="pill-primary neon"
+      >
+        <Download />
+        <span>Curriculum</span>
+      </a>
+    </div>
+    <p
+      id="copy-email"
+      class="col-span-8 order-5 opacity-0 transition-translate-x-4 transition-opacity duration-300 ease-in-out"
+    >
+      Correo copiado al portapapeles!
+    </p>
+  </div>
+
+  
+  
+</SectionContainer>
 
 <script is:inline>
-    const copyBtn = document.getElementById("copy-btn");
-    const copyMsg = document.getElementById("copy-email");
+  const copyBtn = document.getElementById("copy-btn");
+  const copyMsg = document.getElementById("copy-email");
 
-    if (copyBtn) {
-      copyBtn.addEventListener("click", () => {
-        navigator.clipboard.writeText("francortiz.c@gmail.com").then(() => {
-          copyMsg.classList.remove("opacity-0");
-          copyMsg.classList.add("opacity-100");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText("francortiz.c@gmail.com").then(() => {
+        copyMsg.classList.remove("opacity-0");
+        copyMsg.classList.add("opacity-100");
 
-          setTimeout(() => {
-            copyMsg.classList.remove("opacity-100");
-            copyMsg.classList.add("opacity-0");
-          }, 2000);
-        });
+        setTimeout(() => {
+          copyMsg.classList.remove("opacity-100");
+          copyMsg.classList.add("opacity-0");
+        }, 2000);
       });
-    }
-  </script>
-
+    });
+  }
+</script>

@@ -1,17 +1,18 @@
 ---
+import ContentContainer from "@layouts/ContentContainer.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
 
 
 ---
-<SectionContainer id={Astro.props.id}>
-  <h2 class="title">
-    About me
+<SectionContainer id={Astro.props.id}  class="max-w-none bg-primary">
+  <h2 class="title text-secondary">
+    Sobre mí
   </h2>
-  <div class="backdrop-blur-lg shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty">
+  <ContentContainer class="backdrop-blur-lg shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty text-secondary">
     <p>Soy Franco Ortiz Cabrera, desarrollador fullstack con experiencia en tecnologías como Angular, Spring Boot y Node.js. Graduado de la Pontificia Universidad Católica de Valparaíso, me especializo en crear aplicaciones eficientes y escalables, utilizando tanto bases de datos relacionales (MySQL) como no relacionales (MongoDB). 
     </p>
-    <p>En mi día a día, utilizo metodologías ágiles para asegurar una colaboración efectiva y la entrega de resultados de alto impacto. Me apasiona seguir aprendiendo y contribuir a soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos.</p>
+    <p>Me apasiona crear soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos.</p>
     <p>Busco oportunidades que me permitan continuar creciendo profesionalmente en el desarrollo de aplicaciones web y backend.</p>
-  </div>  
+  </ContentContainer>  
 </SectionContainer>
   

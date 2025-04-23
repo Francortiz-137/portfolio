@@ -4,6 +4,6 @@
   image: "/favicon.svg"
   url: "https://example.com/portfolio"
   deployurl: "https://example.com/blog-personal"
-  tags: ["web", "design", "development", "astro", "html", "css", "tailwindcss"]
+  tags: ["astro", "html", "css", "tailwindcss"]
   order: 1
 ---
