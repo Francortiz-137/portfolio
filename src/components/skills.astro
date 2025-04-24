@@ -15,10 +15,11 @@ const categories = ["Frontend", "Backend", "Otros"];
 ---
 <SectionContainer id={Astro.props.id}>
     <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
-    <p class="text-pretty">Estas son las tecnologías con las que he trabajado y que me apasionan. Cada una de ellas ha sido una herramienta valiosa en mi viaje como desarrollador.</p>
-    <p class="text-pretty">Siempre estoy aprendiendo y explorando nuevas herramientas para mejorar mis habilidades y ofrecer soluciones innovadoras.</p>
-
+    
     <div class="w-full max-w-6xl mx-auto px-4 gap-4 space-y-4">
+        <p class="text-pretty">Estas son las tecnologías con las que he trabajado y que me apasionan. Cada una de ellas ha sido una herramienta valiosa en mi viaje como desarrollador.</p>
+        <p class="text-pretty">Siempre estoy aprendiendo y explorando nuevas herramientas para mejorar mis habilidades y ofrecer soluciones innovadoras.</p>
+
         {
         categories.map((category) => {
             return (

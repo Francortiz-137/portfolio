@@ -2,19 +2,23 @@
 import ContentContainer from "@layouts/ContentContainer.astro";
 import SectionContainer from "@layouts/SectionContainer.astro";
 import { Paperclip } from "@lucide/astro";
+import Logo from "./Logo.astro";
 
 
 ---
-<SectionContainer id={Astro.props.id}  class="max-w-none bg-terciary">
-  <h2 class="title text-light">
+<SectionContainer id={Astro.props.id}  class="max-w-none text-dark dark:text-light p-6 group">
+  <Logo
+      class="col-span-8 md:col-span-4 size-32 md:size-64 rounded-full mx-auto mb-4 neon text-primary dark:text-light auto-rotate"
+    />
+  <h2 class="title autoshow">
     Sobre mí
   </h2>
-  <ContentContainer class="grid grid-cols-1 md:grid-cols-2 gap-4 p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty text-light">
-    <p class="order-1">Soy Franco Ortiz Cabrera, desarrollador fullstack con experiencia en tecnologías como Angular, Spring Boot y Node.js. Graduado de la Pontificia Universidad Católica de Valparaíso, me especializo en crear aplicaciones eficientes y escalables, utilizando tanto bases de datos relacionales (MySQL) como no relacionales (MongoDB). 
+  <ContentContainer class="grid grid-cols-1 md:grid-cols-2 gap-4 p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty">
+    <p class="order-1 autoshow">Soy Franco Ortiz Cabrera, desarrollador fullstack con experiencia en tecnologías como Angular, Spring Boot y Node.js. Graduado de la Pontificia Universidad Católica de Valparaíso, me especializo en crear aplicaciones eficientes y escalables, utilizando tanto bases de datos relacionales (MySQL) como no relacionales (MongoDB). 
     </p>
-    <Paperclip class="size-[256px] order-2"/>
-    <p class="order-3 md:order-4">Me apasiona crear soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos.Busco oportunidades que me permitan continuar creciendo profesionalmente en el desarrollo de aplicaciones web y backend.</p>
-    <Paperclip class="size-[256px] order-4 md:order-3"/>
+    <Paperclip class="size-[256px] order-2 autoshow"/>
+    <p class="order-3 md:order-4 autoshow">Me apasiona crear soluciones innovadoras, con un enfoque en mejorar la experiencia del usuario y optimizar procesos tecnológicos.Busco oportunidades que me permitan continuar creciendo profesionalmente en el desarrollo de aplicaciones web y backend.</p>
+    <Paperclip class="size-[256px] order-4 md:order-3 autoshow"/>
   </ContentContainer>  
 </SectionContainer>
   

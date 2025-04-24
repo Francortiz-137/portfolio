@@ -4,15 +4,18 @@
 
   }
 
-  @theme {
-    --color-primary: #2a0478;
-    --color-secondary: #233f99;
-    --color-accent: #27a9f5;
-    --color-pink: #ba1181;
-    --color-dark: #011640;
-    --color-terciary: #5f5ee3;
-    --color-light: #d9d9d9;
-  }
+  
+    @theme {
+        --color-light: #d9d9d9;
+        --color-dark: #070e1a;
+        --color-primary: #2a0478;   /* morado principal */
+        --color-secondary: #1c4f96; /* azul secundario */
+        --color-accent: #ff4ecb;    /* rosa acento */
+        --color-muted: #a3a3b2;
+        --color-info: #4CC9F0;      /* celeste fuerte, como neón galáctico */
+    }
+
+      
 
 @layer components {
     .btn-primary {
@@ -23,7 +26,7 @@
     }
 
     .link{
-        @apply hover:text-accent transition;
+        @apply hover:text-accent dark:hover:text-info transition;
     }
 
     .title{
@@ -52,3 +55,59 @@
     transition: none !important;
   }
   
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 5s ease infinite;
+  }
+
+  .auto-rotate {
+    animation: autoRotateAnimation both;
+    animation-timeline: view(40% 30%);
+  }
+  @keyframes autoRotateAnimation {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
+
+  .autoshow {
+    animation: autoShowAnimation both;
+    animation-timeline: view(40% 30%);
+  }
+
+  @keyframes autoShowAnimation {
+    from{
+      opacity: 0;
+      transform: translatey(200px) scale(0.3);
+    }
+    to{
+      opacity: 1;
+      transform: translatey(0px) scale(1);
+    }
+  }
+
+  .auto-blur{
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+  }
+
+  @keyframes autoBlurAnimation {
+    0%{
+      filter: blur(40px);
+    }
+    45%, 55%{
+      filter: blur(0px);
+    }
+    100%{
+      filter: blur(40px);
+    }
+  }

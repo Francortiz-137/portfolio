@@ -3,12 +3,13 @@ import ContentContainer from "@layouts/ContentContainer.astro"
 import SectionContainer from "@layouts/SectionContainer.astro"
 ---
 <SectionContainer id={Astro.props.id}>
-    <h2 class="title">Contact</h2>
-    <p>Tienes una idea para un proyecto? Hablemos para volverla realidad</p>
-    <p class="text-pretty">Puedes contactarme a través de mi correo electrónico o mis redes sociales. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
-        
+    
     <ContentContainer class="backdrop-blur-lg flex flex-col justify-center items-center shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty">
-        <form action="/api/contact" method="POST" class="bg-secondary/20 py-6 mt-4 md:p-6 rounded-lg shadow-xl  space-y-4">
+      <h2 class="title">Creemos algo asombroso juntos.</h2>
+      <p class="self-start">Tienes una idea para un proyecto? Hablemos para volverla realidad</p>
+      <p class="text-pretty">Puedes contactarme a través de mi correo electrónico o mis redes sociales. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+      
+      <form action="/api/contact" method="POST" class="bg-secondary/20 py-6 mt-4 md:p-6 rounded-lg shadow-xl  space-y-4">
             <h1 class="text-xl font-bold text-primary">Contáctanos</h1>
       
             <input type="text" name="name" placeholder="Tu nombre" required
