@@ -1,0 +1,9 @@
+---
+const { icon, name } = Astro.props
+
+---
+
+<li class="px-2 py-1 text-sm font-semibold text-dark bg-gray-200 dark:bg-dark rounded-full dark:text-gray-300" >
+    <img src={icon} alt={name} class="inline-block w-4 h-4 mr-1" loading="lazy" />
+    {name} 
+</li>

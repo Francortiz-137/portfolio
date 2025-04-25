@@ -25,7 +25,7 @@ interface Project {
 
 const enrichedProjects = projects.map((project) => {
   const enrichedTags = project.data.tags
-    .map((tagKey: string) => tags[tagKey])
+    .map((tagKey: string) => tags[tagKey as keyof typeof tags])
     .filter(Boolean); // por si hay una clave que no existe
 
   return {
@@ -41,13 +41,14 @@ const enrichedProjects = projects.map((project) => {
 <SectionContainer id={Astro.props.id}>
     <h2 class="title">Proyectos</h2>
 
-    <div class="w-full max-w-6xl mx-auto px-4 columns-[300px] gap-4 space-y-4">
+    <div class="mx-auto px-4 columns-[300px] gap-4 space-y-4">
         {
           enrichedProjects
             .sort((a, b) => a.data.order - b.data.order)
             .map((project: Project) => {
-              const { title, description, tags, image, url, deployurl } = project.data;
-      
+              const { slug, data } = project;
+              const { title, description, tags, image, url, deployurl } = data;
+              
               return (
                 <div class="break-inside-avoid">
                   <Card
@@ -57,6 +58,7 @@ const enrichedProjects = projects.map((project) => {
                     image={image}
                     deployurl={deployurl}
                     tags={tags}
+                    slug={slug}
                   />
                 </div>
               );

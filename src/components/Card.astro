@@ -1,8 +1,8 @@
 ---
 import { Github, Globe } from "@lucide/astro";
+import Tag from "./Tag.astro";
 
-const { url, title, description, image, deployurl, tags } = Astro.props;
-const { slug } = Astro.params;
+const { url, title, description, image, deployurl, tags, slug } = Astro.props;
 interface Tag {
     name: string;
     icon: string;
@@ -10,30 +10,32 @@ interface Tag {
 }
 ---
 
-<article class="flex flex-col items-center justify-start w-full  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+<article class="flex flex-col items-center justify-start w-full  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 card-animation">
     
-    <div class="flex items-center justify-center w-full min-h-48 bg-gray-200 rounded-t-lg">
-        <img src={image} alt={title} class="object-cover w-full h-full rounded-t-lg" loading="lazy" />
-    </div>
+    <a href={`/projects/${slug}`} transition:name={`img-${slug}`} class="w-full">
+        <div class="flex items-center justify-center w-full min-h-48 bg-gray-200 rounded-t-lg">
+        
+            <img src={image} alt={title} class="object-cover w-full h-full rounded-t-lg" loading="lazy" />
+        
+        </div>
+    </a>
+    
     <div class="p-4">
         <div>
             <h2 class="text-dark dark:text-light font-bold mb-2">{title}</h2>
             <p class="text-gray-400">{description}</p>
             <div>
                 <ul class="flex flex-wrap gap-2 mt-2">
-                    {Astro.props.tags.map((tag:Tag) => (
-                        <li class="px-2 py-1 text-sm font-semibold text-dark bg-gray-200 dark:bg-dark rounded-full dark:text-gray-300" 
-                       >
-                            <img src={tag.icon} alt={tag.name} class="inline-block w-4 h-4 mr-1" loading="lazy" />
-                            {tag.name} </li>
+                    {tags.map((tag:Tag) => (
+                         <Tag name={tag.name} icon={tag.icon} color={tag.color} />
                     ))}
                 </ul>
             </div>
         </div>
-        <div class="mt-4 flex justify-center gap-4 text-accent dark:text-info">
-        <a class="flex" href={url}> <Github/> Github</a>
+        <div class="mt-4 flex items center justify-center gap-4 text-accent dark:text-info">
+        <a class="flex btn-primary dark:bg-info dark:text-dark" href={url}> <Github/> Github</a>
             { deployurl && 
-            <a class="flex" href={deployurl}>
+            <a class="flex justify-center items-center btn-secondary dark:border-info dark:text-info" href={deployurl}>
                 <Globe/>
                 Web</a>}
         </div>

@@ -7,14 +7,23 @@
   
     @theme {
         --color-light: #d9d9d9;
-        --color-dark: #070e1a;
+        --color-dark: #090126;
         --color-primary: #2a0478;   /* morado principal */
         --color-secondary: #1c4f96; /* azul secundario */
-        --color-accent: #ff4ecb;    /* rosa acento */
+        --color-accent: #FF0453;    /* rosa acento */
         --color-muted: #a3a3b2;
-        --color-info: #4CC9F0;      /* celeste fuerte, como neón galáctico */
-    }
+        --color-info: #F2AB27;      /* celeste fuerte, como neón galáctico */
+    
 
+        --color-l-background: #FFFAEB;
+        --color-l-background-2: #FDF2EC;
+        --color-l-text: #2B2B2B;
+        --color-l-text-2: #595959
+        --color-l-primary: #FF6B81; 
+        --color-l-secondary: #FDBF60;
+        --color-l-accent: #A4D7E1;
+        --color-l-highlight: #D8A6FF; 
+    }
       
 
 @layer components {
@@ -33,7 +42,7 @@
         @apply pb-8 text-center font-bold text-4xl lg:text-6xl text-dark dark:text-light mb-4;
     }
     .pill-primary{
-        @apply flex justify-center md:justify-start items-center gap-2 bg-primary text-white font-bold py-2 px-4 min-w-[146px] rounded-full text-sm;
+        @apply flex justify-center md:justify-start items-center gap-2 bg-primary dark:bg-accent text-white font-bold py-2 px-4 min-w-[146px] rounded-full text-sm;
     }
     .pill-secondary{
         @apply flex justify-center md:justify-start items-center gap-2 bg-transparent hover:bg-accent text-primary dark:text-light font-semibold rounded-full text-sm hover:text-white py-2 px-4 
@@ -68,7 +77,7 @@
 
   .auto-rotate {
     animation: autoRotateAnimation both;
-    animation-timeline: view(40% 30%);
+    animation-timeline: view(10% 30%);
   }
   @keyframes autoRotateAnimation {
     from{
@@ -109,5 +118,21 @@
     }
     100%{
       filter: blur(40px);
+    }
+  }
+
+  @keyframes slide-face-in {
+    from{
+      transform: translateY(5vh);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-animation {
+      view-timeline-name: --item-timeline;
+      animation: slide-fade-in both;
+      animation-timeline: --item-timeline;
+      animation-range: contain 0% contain 50%;
     }
   }

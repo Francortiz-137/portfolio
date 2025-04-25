@@ -5,12 +5,12 @@ import SectionContainer from "@layouts/SectionContainer.astro"
 <SectionContainer id={Astro.props.id}>
     
     <ContentContainer class="backdrop-blur-lg flex flex-col justify-center items-center shadow-md p-2 md:p-4 lg:p-8 py-12 rounded-md text-start text-pretty">
-      <h2 class="title">Creemos algo asombroso juntos.</h2>
-      <p class="self-start">Tienes una idea para un proyecto? Hablemos para volverla realidad</p>
-      <p class="text-pretty">Puedes contactarme a través de mi correo electrónico o mis redes sociales. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+      <h2 class="title text-primary dark:text-light">Creemos algo asombroso juntos<span class="text-info dark:text-accent">.</span></h2>
+      <p class="self-start text-muted">Tienes una idea para un proyecto? Hablemos para volverla realidad</p>
+      <p class="text-pretty text-muted">Puedes contactarme a través de mi correo electrónico o mis redes sociales. Estoy abierto a nuevas oportunidades y colaboraciones.</p>
       
       <form action="/api/contact" method="POST" class="bg-secondary/20 py-6 mt-4 md:p-6 rounded-lg shadow-xl  space-y-4">
-            <h1 class="text-xl font-bold text-primary">Contáctanos</h1>
+            <h1 class="text-xl font-bold text-primary dark:text-secondary">Contáctame!</h1>
       
             <input type="text" name="name" placeholder="Tu nombre" required
               class="w-full p-3 rounded bg-gray-200/70 border border-transparent focus:outline-none focus:ring-2 focus:ring-primary"/>
@@ -22,9 +22,9 @@ import SectionContainer from "@layouts/SectionContainer.astro"
               class="w-full p-3 rounded bg-gray-200/70 border border-transparent focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
       
             <button type="submit"
-              class="w-full bg-primary hover:bg-primary text-white font-semibold p-3 rounded transition">Enviar</button>
+              class="w-full bg-accent hover:bg-primary text-white font-semibold p-3 rounded transition">Enviar</button>
           </form>
-            <p class="text-pretty">O puedes escribirme directamente a mi correo: <a href="mailto:francortiz.c@gmail.com" class="text-primary"> francortiz.c@gmail.com</a>
+            <p class="mt-8 text-pretty">O puedes escribirme directamente a mi correo: <a href="mailto:francortiz.c@gmail.com" class="text-accent dark:text-info"> francortiz.c@gmail.com</a>
     </ContentContainer>
             </SectionContainer>
 
